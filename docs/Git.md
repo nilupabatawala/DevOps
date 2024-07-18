@@ -136,7 +136,7 @@ Feature Branch Synchronization: Regularly rebasing your feature branch onto the 
 
 You find yourself in a detached HEAD state. How would you get back to your branch and ensure no changes are lost
 
-When you find yourself in a detached HEAD state in Git, it means that you are not currently on any branch but rather on a specific commit. To get back to your branch and ensure no changes are lost, you can follow these steps:
+##Question 4: When you find yourself in a detached HEAD state in Git, it means that you are not currently on any branch but rather on a specific commit. To get back to your branch and ensure no changes are lost, you can follow these steps:
 
 Step 1: Commit or Stash Your Changes
 First, ensure that any changes you've made are not lost. You can either commit them directly or stash them if you don't want to commit yet.
@@ -165,3 +165,48 @@ Step 3: Apply Your Changes
 Finally, if you stashed your changes, you'll need to apply the
 
 `git stash pop`
+
+
+## Question 5: You need to switch branches, but you have uncommitted changes that you want to save. How would you use `git stash` to handle this
+
+You Have Uncommitted Changes:
+You have made some changes in your working directory but haven't committed them yet.
+
+Stash your changes:
+
+`git stash push -m "WIP: Saving changes before switching branches"`
+
+Switch to another branch:
+
+`git checkout feature-branch`
+
+Apply Your Stashed Changes:
+
+`git stash pop`
+
+Or, if you want to keep the stash for future use:
+
+`git stash apply`
+
+Additional git stash Commands
+
+List stashes
+
+`git stash list`
+
+Apply a Specific Stash:
+
+`git stash apply stash@{n}`
+
+Replace n with the appropriate stash index from the list.
+
+Drop a Stash:
+
+`git stash drop stash@{n}`
+
+Replace n with the appropriate stash index you want to drop.
+
+Clear All Stashes:
+
+`git stash clear`
+
