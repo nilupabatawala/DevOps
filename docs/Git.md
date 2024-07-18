@@ -114,3 +114,54 @@ After successfully merging the feature branch, you can delete the feature branch
 `git branch -d feature/new-feature`
 **Delete the remote feature branch**
 `git push origin --delete feature/new-feature`
+
+
+### Question 3 Explain when you would use git rebase instead of git merge and vice versa.
+
+**When to Use git merge**
+Scenario: Preserving Complete History
+
+Merging Branches: When you want to combine the changes from one branch into another and keep the complete history of both branches. This includes all individual commits and the branch's timeline.
+Feature Branch Integration: Merging a feature branch into the main branch (main or master) to keep track of all the work done on the feature.
+Multiple Contributors: In a project with multiple contributors, merging ensures that the history of contributions is preserved.
+Conflict Resolution in Context: If you want to see how conflicts are resolved in a merge commit, which can provide context for future debugging.
+
+**When to Use git rebase**
+Scenario: Linear and Clean History
+
+Cleaning Up Commits: When you want to create a linear history without the noise of merge commits. This makes the project's history easier to follow.
+Rewriting History: To replay commits from one branch onto another. This is useful for integrating changes from the main branch into a feature branch cleanly.
+Single Developer: In a single-developer workflow or when working with a small team where everyone agrees on using rebase.
+Feature Branch Synchronization: Regularly rebasing your feature branch onto the main branch to ensure it's up-to-date without merge commits cluttering the history.
+
+You find yourself in a detached HEAD state. How would you get back to your branch and ensure no changes are lost
+
+When you find yourself in a detached HEAD state in Git, it means that you are not currently on any branch but rather on a specific commit. To get back to your branch and ensure no changes are lost, you can follow these steps:
+
+Step 1: Commit or Stash Your Changes
+First, ensure that any changes you've made are not lost. You can either commit them directly or stash them if you don't want to commit yet.
+
+Option 1: Commit Changes
+
+If you want to keep the changes:
+
+`git add .`
+`git commit -m "WIP: Saving changes before switching branches"`
+
+Option 2: Stash Changes
+
+If you don't want to commit yet:
+
+`git stash`
+
+Step 2: Switch Back to Your Branch
+Next, switch back to your original branch. You can check the list of branches and switch to the appropriate one.
+
+`git checkout <branch-name>`
+
+Replace <branch-name> with the name of your branch (e.g., main, develop, etc.).
+
+Step 3: Apply Your Changes
+Finally, if you stashed your changes, you'll need to apply the
+
+`git stash pop`
