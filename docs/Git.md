@@ -2,9 +2,7 @@
 
 ### Question 1 You are in the middle of a merge and encounter a conflict. How would you resolve this conflict and complete the merge?
 
-**Steps to Resolve a Merge Conflict:**
-
-* **Identify the Conflict** When you try to merge branches and encounter a conflict, Git will notify you which files have conflicts. The conflicted files will be marked, and you can see a list of them with:
+***Identify the Conflict** When you try to merge branches and encounter a conflict, Git will notify you which files have conflicts. The conflicted files will be marked, and you can see a list of them with:
 
 `git status`
 
