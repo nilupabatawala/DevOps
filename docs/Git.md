@@ -50,10 +50,69 @@ Replace <commit-hash> with the actual hash of the commit you want to revert.
 
 If you need to revert multiple commits, you can specify a range of commits or use multiple git revert commands. For example:
 
-# Revert a range of commits
+**Revert a range of commits**
 `git revert <oldest-commit-hash>..<newest-commit-hash>`
 
-# Revert multiple individual commits
+**Revert multiple individual commits**
 `git revert abc1234 def5678 ghi9101`
 
 
+**Question 3: Your team follows Git Flow. Describe how you would create a feature branch and then merge it back into the develop branch once completed.**
+
+**Workflow to Create a Feature Branch:**
+
+`git checkout develop`
+`git fetch`
+`git pull origin develop`
+`git checkout -b feature/new-feature`
+
+**Develop the Feature**
+Work on your feature in the feature branch. Add, commit, and push your changes as necessary.
+
+`git add .`
+`git commit -m "Implement new feature"`
+`git push origin feature/new-feature`
+
+**Steps to Merge the Feature Branch Back into Develop**
+
+Switch to the Develop Branch: Once the feature is complete, switch back to the develop branch:
+
+`git checkout develop`
+
+Pull the Latest Changes: Ensure your develop branch is up to date:
+
+`git pull origin develop`
+
+Merge the Feature Branch: Merge your feature branch into the develop branch:
+
+`git merge --no-ff feature/<feature-name>`
+
+The --no-ff flag ensures that a merge commit is created, preserving the history of the feature branch.
+
+Resolve Any Conflicts: If there are any conflicts, resolve them, add the resolved files, and commit the merge:
+
+`git add <resolved-file>`
+`git commit`
+
+Push the Changes: Push the updated develop branch to the remote repository:
+
+`git push origin develop`
+
+**Workflow to Merge a Feature Branch:**
+
+`git checkout develop`
+`git pull origin develop`
+`git merge --no-ff feature/new-feature`
+# If there are conflicts, resolve them, then:
+`git add <resolved-file>`
+`git commit`
+# Push the updated develop branch
+`git push origin develop`
+
+**Cleanup**
+After successfully merging the feature branch, you can delete the feature branch both locally and remotely:
+
+**Delete the local feature branch**
+`git branch -d feature/new-feature`
+# Delete the remote feature branch
+`git push origin --delete feature/new-feature`
