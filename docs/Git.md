@@ -1,6 +1,6 @@
 ### GIT Interview questions?
 
-**Question 1** You are in the middle of a merge and encounter a conflict. How would you resolve this conflict and complete the merge?
+### Question 1 You are in the middle of a merge and encounter a conflict. How would you resolve this conflict and complete the merge?
 
 **Steps to Resolve a Merge Conflict:**
 
