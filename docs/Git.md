@@ -103,10 +103,10 @@ Push the Changes: Push the updated develop branch to the remote repository:
 `git checkout develop`
 `git pull origin develop`
 `git merge --no-ff feature/new-feature`
-# If there are conflicts, resolve them, then:
+**If there are conflicts, resolve them, then:**
 `git add <resolved-file>`
 `git commit`
-# Push the updated develop branch
+**Push the updated develop branch**
 `git push origin develop`
 
 **Cleanup**
@@ -114,5 +114,5 @@ After successfully merging the feature branch, you can delete the feature branch
 
 **Delete the local feature branch**
 `git branch -d feature/new-feature`
-# Delete the remote feature branch
+**Delete the remote feature branch**
 `git push origin --delete feature/new-feature`
