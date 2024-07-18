@@ -10,13 +10,14 @@
 
 **Open and Inspect the Conflicted Files:**
 Open the conflicted files in your text editor or IDE. Look for conflict markers. The conflict markers look like this:
-`
-<<<<<<< HEAD
+
+`<<<<<<< HEAD
 Your changes (from the current branch)
 =======
 Incoming changes (from the branch you are merging)
->>>>>>> branch-name``
-`
+>>>>>>> branch-name`
+
+
 **Resolve the Conflict:**
 Edit the file to resolve the conflict. Decide which changes to keep, or combine the changes as needed. After resolving the conflict, remove the conflict markers.
 
