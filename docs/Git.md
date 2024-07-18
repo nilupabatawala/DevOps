@@ -116,7 +116,7 @@ After successfully merging the feature branch, you can delete the feature branch
 `git push origin --delete feature/new-feature`
 
 
-### Question 3 Explain when you would use git rebase instead of git merge and vice versa.
+### Question 4 Explain when you would use git rebase instead of git merge and vice versa.
 
 **When to Use git merge**
 Scenario: Preserving Complete History
@@ -136,7 +136,7 @@ Feature Branch Synchronization: Regularly rebasing your feature branch onto the 
 
 You find yourself in a detached HEAD state. How would you get back to your branch and ensure no changes are lost
 
-##Question 4: When you find yourself in a detached HEAD state in Git, it means that you are not currently on any branch but rather on a specific commit. To get back to your branch and ensure no changes are lost, you can follow these steps:
+## Question 5: When you find yourself in a detached HEAD state in Git, it means that you are not currently on any branch but rather on a specific commit. To get back to your branch and ensure no changes are lost, you can follow these steps:
 
 Step 1: Commit or Stash Your Changes
 First, ensure that any changes you've made are not lost. You can either commit them directly or stash them if you don't want to commit yet.
@@ -167,7 +167,7 @@ Finally, if you stashed your changes, you'll need to apply the
 `git stash pop`
 
 
-## Question 5: You need to switch branches, but you have uncommitted changes that you want to save. How would you use `git stash` to handle this
+## Question 6: You need to switch branches, but you have uncommitted changes that you want to save. How would you use `git stash` to handle this
 
 You Have Uncommitted Changes:
 You have made some changes in your working directory but haven't committed them yet.
@@ -209,4 +209,36 @@ Replace n with the appropriate stash index you want to drop.
 Clear All Stashes:
 
 `git stash clear`
+
+
+## Question 7: How would you squash multiple commits into a single commit before merging to the main branch
+
+Start an Interactive Rebase:
+Begin an interactive rebase for the range of commits you want to squash. If you want to squash the last N commits, use:
+
+`git rebase -i HEAD~N`
+
+Replace N with the number of commits you want to squash.
+
+Mark Commits for Squashing:
+In the interactive rebase screen, you'll see a list of commits like this:
+
+`pick <commit-hash> Commit message 1`
+`pick <commit-hash> Commit message 2`
+`pick <commit-hash> Commit message 3`
+
+Change the word pick to squash (or s) for all commits you want to squash into the previous commit. Only the first commit should remain as pick.
+
+`pick <commit-hash> Commit message 1`
+`squash <commit-hash> Commit message 2`
+`squash <commit-hash> Commit message 3`
+
+Save and Exit the Editor:
+After making your changes, save and close the editor. For example, in vim, you would press Esc, then type :wq and press Enter.
+
+Edit Commit Message:
+After saving, another editor screen will appear, allowing you to edit the commit message for the squashed commit. You can combine the commit messages or write a new one.
+
+Complete the Rebase:
+Save and close the editor to complete the rebase process.
 
