@@ -29,7 +29,7 @@ Push the resolved merge commit to the remote repository:
 
 `git push origin <branch-name>`
 
-**Question 2** A teammate accidentally pushed a commit that breaks the build. How would you revert the changes made by this commit ?
+### Question 2 A teammate accidentally pushed a commit that breaks the build. How would you revert the changes made by this commit ?
 
 **Identify the Commit:**
 First, identify the commit hash of the problematic commit. You can do this using the git log command:
